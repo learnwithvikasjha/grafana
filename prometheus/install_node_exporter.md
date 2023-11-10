@@ -54,5 +54,7 @@ sudo systemctl enable node_exporter
 sudo systemctl status node_exporter
 ```
 # Allow port on filrewall & reload firewall service
+```
 sudo firewall-cmd --zone=public --add-port=9100/tcp --permanent
 sudo systemctl restart firewalld
+```
