@@ -18,8 +18,6 @@ Write following content in the file
 [prometheus-node-exporter]
 name=prometheus-node-exporter
 baseurl=https://packagecloud.io/prometheus-rpm/node_exporter/el/7/\$basearch
-gpgcheck=1
+gpgcheck=0
 enabled=1
-gpgkey=https://packagecloud.io/prometheus-rpm/node_exporter/gpgkey
-sslverify=1
 ```
