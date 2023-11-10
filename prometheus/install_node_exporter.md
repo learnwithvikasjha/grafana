@@ -25,10 +25,11 @@ sudo useradd -rs /bin/false nodeusr
 # Configuring Node Exporter to run as a service
 create a file
 ```
-touch /etc/systemd/system/node_exporter.service
+sudo touch /etc/systemd/system/node_exporter.service
 ```
 
 write below content in the file.
+By default node_exporter runs on port `9100` , you can change it if required and specify a different port in `--web.listen-address`
 
 ```
 [Unit]
@@ -39,7 +40,7 @@ After=network.target
 User=nodeusr
 Group=nodeusr
 Type=simple
-ExecStart=/usr/local/bin/node_exporter --web.listen-address=:9105
+ExecStart=/usr/local/bin/node_exporter --web.listen-address=:9100
 
 [Install]
 WantedBy=multi-user.target
@@ -52,3 +53,6 @@ sudo systemctl start node_exporter
 sudo systemctl enable node_exporter
 sudo systemctl status node_exporter
 ```
+# Allow port on filrewall & reload firewall service
+sudo firewall-cmd --zone=public --add-port=9100/tcp --permanent
+sudo systemctl restart firewalld
