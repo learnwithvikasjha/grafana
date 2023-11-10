@@ -61,3 +61,18 @@ scrape_configs:
     static_configs:
       - targets: ['localhost:9090']
 ```
+
+# Access Prometheus
+You can now login to `http://IP_Address:9090` to access Prometheus GUI.
+If you can't access the page it can be either because prometheus service is not started or port is not allowed from outside world.
+
+# Commands to open firewall ports on centos 7
+- Check ports which are allowed
+```
+sudo firewall-cmd --zone=public --list-ports
+```
+- Allow 9090 port
+```
+sudo firewall-cmd --zone=public --add-port=9090/tcp --permanent
+sudo firewall-cmd --reload
+```
