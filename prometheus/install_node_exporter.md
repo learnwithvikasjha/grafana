@@ -8,16 +8,47 @@ System Metrics:
 Collects general system-level metrics such as CPU usage, memory usage, disk I/O, and network activity.
 Provides information about the overall health and performance of the system.
 
-# Install node_exporter
-Create a file 
+# Download and extract Node Exporter
+- You can download node exporter from this link.
+[Download Node Exporter](https://prometheus.io/download/#node_exporter)
+- Extract Node Explorer
 ```
-touch /etc/yum.repos.d/prometheus-node-exporter.repo
+tar -xzvf node_exporter*.gz
 ```
-Write following content in the file
+- Create a user which we will use to run node_exporter service
+Username: nodeusr
 ```
-[prometheus-node-exporter]
-name=prometheus-node-exporter
-baseurl=https://packagecloud.io/prometheus-rpm/node_exporter/el/7/\$basearch
-gpgcheck=0
-enabled=1
+sudo useradd -rs /bin/false nodeusr
+```
+
+
+# Configuring Node Exporter to run as a service
+create a file
+```
+touch /etc/systemd/system/node_exporter.service
+```
+
+write below content in the file.
+
+```
+[Unit]
+Description=Node Exporter
+After=network.target
+
+[Service]
+User=nodeusr
+Group=nodeusr
+Type=simple
+ExecStart=/usr/local/bin/node_exporter --web.listen-address=:9105
+
+[Install]
+WantedBy=multi-user.target
+```
+
+# Start node_exporter service
+```
+sudo systemctl daemon-reload
+sudo systemctl start node_exporter
+sudo systemctl enable node_exporter
+sudo systemctl status node_exporter
 ```
