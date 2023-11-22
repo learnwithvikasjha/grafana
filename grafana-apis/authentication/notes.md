@@ -1,7 +1,7 @@
 ```mermaid
 graph TD;
-    Service Management Tool -->Ticket Number;
-    Ticket Number-->C;
+    ServiceManagementTool -->TicketNumber;
+    TicketNumber-->C;
     B-->D;
     C-->D;
 ```
