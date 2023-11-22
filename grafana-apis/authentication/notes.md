@@ -10,6 +10,7 @@
 
 - Extensibility: By learning the Grafana APIs, you gain the ability to develop plugins or extensions for Grafana, expanding its capabilities and integrating new features.
 
+## Automation Example
 ```mermaid
 graph TD;
     A[Ticket Creation] --> B[Service Management Tool];
