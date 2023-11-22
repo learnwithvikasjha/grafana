@@ -1,13 +1,13 @@
-```mermaid
-graph TD;
-    User Creates Ticket-->ServiceManagementTool;
-    ServiceManagementTool-->Webhook_To_Automation_Tool;
-    Webhook_To_Automation_Tool-->Runs_Grafana_APIs
-    Runs_Grafana_APIs-->Sends_Create_User_Notification;
-    Sends_Create_User_Notification-->User_Credentials_Received_in_Email;
-    Runs_Grafana_APIs-->ServiceManagementTool
 ```
-
+graph TD;
+    A[Ticket Creation] --> B[Service Management Tool];
+    B --> C[Automation Tool];
+    C --> D[Grafana API];
+    D --> E[Request Fulfillment];
+    E --> F[Notification to User];
+    F --> G[Email];
+    G --> H[Ticket Closure];
+```
 # Grafana API Authentication
 
 - Basic Authentication
