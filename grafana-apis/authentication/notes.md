@@ -24,5 +24,8 @@ graph TD;
 # Grafana API Authentication
 
 - Basic Authentication
+We use username and password to connect to Grafana APIs.
 
 - Token Based Authentication
+We use a token to connect to Grafana APIs
+
