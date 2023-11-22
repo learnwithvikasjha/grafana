@@ -1,4 +1,4 @@
-```
+```mermaid
 graph TD;
     A[Ticket Creation] --> B[Service Management Tool];
     B --> C[Automation Tool];
