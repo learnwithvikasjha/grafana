@@ -39,7 +39,6 @@ CREATE TABLE sales (
 
 # Create Random Sales Entry in the table
 ```
-
 DELIMITER //
 
 CREATE PROCEDURE InsertRandomSale()
@@ -48,8 +47,8 @@ BEGIN
     DECLARE quantity INT;
     DECLARE sale_price DECIMAL(10, 2);
 
-    SET product_id = FLOOR(1 + (RAND() * 10)); -- Random product_id between 1 and 10
-    SET quantity = FLOOR(1 + (RAND() * 5)); -- Random quantity between 1 and 5
+    SET product_id = FLOOR(1 + (RAND() * 12)); -- Random product_id between 1 and 10
+    SET quantity = FLOOR(1 + (RAND() * 20)); -- Random quantity between 1 and 5
     SET sale_price = ROUND(10.0 + (RAND() * (1000.0 - 10.0)), 2); -- Random sale_price between 10.0 and 1000.0
 
     INSERT INTO sales (product_id, quantity, sale_price, sale_timestamp)
