@@ -70,6 +70,7 @@ CALL InsertRandomSale();
 
 
 # Some queries
+## top products sold
 ```
 SELECT 
     products.name, 
@@ -82,4 +83,14 @@ ON
     products.id = sales.product_id 
 GROUP BY 
     products.name;
+```
+
+## revenue generated so far
+```
+SELECT
+  sale_timestamp as time,
+  SUM(sale_price)
+FROM
+  mydatabase.sales
+GROUP BY time
 ```
