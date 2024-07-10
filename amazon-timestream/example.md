@@ -3,7 +3,6 @@
 - Create a table in Timestream
 - Insert some data to the table. Data should have **Dimensions** and **Measures**
 - Create a user in AWS IAM and give that user access to read and write to timestream database. You can attach below inline policy in the newly created user:
--
 ```
   {
 	"Version": "2012-10-17",
@@ -28,6 +27,24 @@
 	]
 }
 
+```
+- Install and configure timestream datasource plugin in Grafana
+- Create Queries
+- Use Variables to create dynamic dashboards.
+
+# Example queries
+
+- Get all the distinct values of a dimension
+```
+SELECT DISTINCT country FROM $__database.$__table
+```
+- Apply some filters in the query
+```
+SELECT bin(time, $__interval) AS binned_time, country, AVG(measure_value::double) AS avg_temperature
+FROM $__database.$__table
+WHERE country = ANY(VALUES ${country:singlequote})
+GROUP BY bin(time, $__interval), country
+ORDER BY binned_time
 ```
 
 ### Python program to insert random weather data to timestream
