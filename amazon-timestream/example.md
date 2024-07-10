@@ -3,7 +3,8 @@
 - Create a table in Timestream
 - Insert some data to the table. Data should have **Dimensions** and **Measures**
 - Create a user in AWS IAM and give that user access to read and write to timestream database. You can attach below inline policy in the newly created user:
-- ```
+-
+```
   {
 	"Version": "2012-10-17",
 	"Statement": [
@@ -26,6 +27,7 @@
 		}
 	]
 }
+
 ```
 
 ### Python program to insert random weather data to timestream
