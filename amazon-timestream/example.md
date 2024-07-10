@@ -47,6 +47,9 @@ GROUP BY bin(time, $__interval), country
 ORDER BY binned_time
 ```
 
+# Important Grafana document for seeing how variable's syntax
+https://grafana.com/docs/grafana/latest/dashboards/variables/variable-syntax/#raw
+
 ### Python program to insert random weather data to timestream
 
 ```
