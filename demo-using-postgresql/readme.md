@@ -292,6 +292,16 @@ if __name__ == "__main__":
 
 # Importing the dashboard in Grafana
 - Login to Grafana
+- Create a Datasource connection using these details:
+
+```
+Database Host: postgresql:5432
+Database Name: grafana
+Database User: grafana
+Database Password: grafana123
+SSL Connection: Disable
+```
+
 - Click on Import Dashboard
 - Upload this json file there. [Download Demo Dashboard JSON](https://github.com/learnwithvikasjha/grafana/raw/main/demo-using-postgresql/Demo%20Dashboard-1738164458532.json)
 - You should now be able to see the dashboard
