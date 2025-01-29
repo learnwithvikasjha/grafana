@@ -288,7 +288,7 @@ if __name__ == "__main__":
 # Importing the dashboard in Grafana
 - Login to Grafana
 - Click on Import Dashboard
-- Upload this json file there. ![File](Demo Dashboard-1738164458532.json)
+- Upload this json file there. ![File](demo-using-postgresql/Demo Dashboard-1738164458532.json)
 - You should now be able to see the dashboard
 - Sample Dashboard
-![Sample Grafana Dashboard](sample-dashboard.png)
+![Sample Grafana Dashboard](demo-using-postgresql/sample-dashboard.jpg)
