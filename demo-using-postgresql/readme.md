@@ -1,3 +1,8 @@
+# Prerequisite
+- Unix Server
+- Docker and Docker compose Installed
+
+
 # Run Grafana and Postgresql
 Create a file called `docker-compose.yaml` and add the below content to run Grafana and PostgreSQL
 
