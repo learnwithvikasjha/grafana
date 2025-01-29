@@ -53,6 +53,13 @@ To stop the services:
 docker-compose down
 ```
 
+## Grafana will be accessible at
+
+```
+http://localhost:3000/login
+```
+
+
 # Creating python program to generate fake data and insert in the database
 
 - Create a python virtual environment
