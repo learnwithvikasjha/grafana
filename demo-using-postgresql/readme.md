@@ -277,8 +277,18 @@ if __name__ == "__main__":
     main()
 ```
 
+
 # Scheduling the python program to generate data and insert in the database every 5 minutes
 - schedule the file to run every 5 minutes by scheduling it in the cronjob
 ```
 */5 * * * * /root/grafana/venv/bin/python /root/grafana/generate_data.py >> /root/grafana/data_generator.log 2>&1
 ```
+
+
+# Importing the dashboard in Grafana
+- Login to Grafana
+- Click on Import Dashboard
+- Upload this json file there. ![File](Demo Dashboard-1738164458532.json)
+- You should now be able to see the dashboard
+- Sample Dashboard
+![Sample Grafana Dashboard](sample-dashboard.png)
